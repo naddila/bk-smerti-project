@@ -52,16 +52,15 @@
                             <td data-label="Posisi">
                                 <!-- Button Info -->
                                 <button type="button" class="btn btn-sm btn-info mb-1" data-bs-toggle="modal"
-                                    data-bs-target="#modalCenter{{ $siswa->id }}">
-                                    <i class="fas fa-info"></i>
+                                    data-bs-target="#modalCenter{{ $siswa->id }}">Detail
                                 </button>
                                 <!-- Button Tambah -->
-                                <a href="/pelanggaran/tambah/{{ $siswa->nisn }}" class="btn btn-sm btn-danger mb-1">
-                                    <i class="fas fa-plus"></i>
+                                <a href="/pelanggaran/tambah/{{ $siswa->nisn }}" class="btn btn-sm btn-danger mb-1">Tambah
+
                                 </a>
                                 <!-- Button Kurang -->
-                                <a href="/pelanggaran/kurang/{{ $siswa->nisn }}" class="btn btn-sm btn-success mb-1">
-                                    <i class="fas fa-minus"></i>
+                                <a href="/pelanggaran/kurang/{{ $siswa->nisn }}" class="btn btn-sm btn-success mb-1">Kurang
+
                                 </a>
                             </td>
                         </tr>

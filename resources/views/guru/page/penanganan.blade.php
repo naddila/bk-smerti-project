@@ -14,7 +14,7 @@
                         <tr>
                             <th>No.</th>
                             <th>Nama</th>
-                            <th>Tindak Lanjut</th>
+                            <th>Penanganan</th>
                             <th>Status</th>
                         </tr>
                     </thead>

@@ -174,4 +174,5 @@ class StudentController extends Controller
         $pdf = PDF::loadView('public/surat/' . $penanganan->berkas);
         return $pdf->stream($penanganan->berkas);
     }
+
 }

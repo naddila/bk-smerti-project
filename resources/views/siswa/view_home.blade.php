@@ -19,7 +19,7 @@
     </div>
 
     <!-- Card Poin Pelanggaran -->
-    <div class="col-lg-4 col-md-6 mb-3 p-0">
+    <div class="col-lg-4 col-md-12 mb-3 p-0">
         <div class="card h-100" style="animation-delay: 0s;">
             <div class="card-body border-left-green">
                 <div class="row">
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<div class="row px-0">
+{{-- <div class="row px-0">
     <div class="cut col-lg-6 pr-2">
         <div class="card shadow-lg-3">
             <div class="card-header text-light h5 px-3" style="background-color: #395886;">
@@ -88,18 +88,6 @@
                         <td>:</td>
                         <td>{{ $siswa->no_telp }}</td>
                     </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="cut col-lg-6 pl-2">
-        <div class="card shadow-lg-3">
-            <div class="card-header text-light h5 px-3" style="background-color:#395886">
-                <i class="fas fa-user mr-2"></i>
-                Data Orang Tua
-            </div>
-            <div class="card-body py-1 px-3 text-dark">
-                <table class="table mb-0">
                     <tr class="table-trr">
                         <td>Nama Ayah</td>
                         <td>:</td>
@@ -124,4 +112,77 @@
             </div>
         </div>
     </div>
+</div> --}}
+<div class="row px-0">
+    <div class="col-lg-10 col-md-6 mb-3 p-0">
+        <div class="card shadow-lg rounded border-0">
+            <div class="card-header d-flex justify-content-between align-items-center text-light h5 px-3"
+                style="background-color: #395886;">
+                <div>
+                    <i class="fas fa-user-graduate me-2"></i> Data Siswa dan Orang Tua
+                </div>
+                <button class="btn btn-sm btn-outline-light open_modal clickind">
+                    <i class="fas fa-pen"></i>
+                </button>
+            </div>
+            <div class="card-body text-dark">
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Informasi</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nama</td>
+                            <td>{{ $siswa->nama }}</td>
+                        </tr>
+                        <tr>
+                            <td>NISN</td>
+                            <td>{{ $siswa->nisn }}</td>
+                        </tr>
+                        <tr>
+                            <td>Tempat, Tanggal Lahir</td>
+                            <td>{{ $siswa->ttl }}</td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td>{{ $siswa->jk }}</td>
+                        </tr>
+                        <tr>
+                            <td>Agama</td>
+                            <td>{{ $siswa->agama }}</td>
+                        </tr>
+                        <tr>
+                            <td>Alamat</td>
+                            <td>{{ $siswa->alamat }}</td>
+                        </tr>
+                        <tr>
+                            <td>Telepon Siswa</td>
+                            <td>{{ $siswa->no_telp }}</td>
+                        </tr>
+                        <tr>
+                            <td>Nama Ayah</td>
+                            <td>{{ $siswa->n_ayah }}</td>
+                        </tr>
+                        <tr>
+                            <td>Nama Ibu</td>
+                            <td>{{ $siswa->n_ibu }}</td>
+                        </tr>
+                        <tr>
+                            <td>Alamat Ortu</td>
+                            <td>{{ $siswa->alamat_ortu }}</td>
+                        </tr>
+                        <tr>
+                            <td>Telepon Rumah</td>
+                            <td>{{ $siswa->no_telp_rumah }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+
+

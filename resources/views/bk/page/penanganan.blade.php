@@ -15,7 +15,7 @@
                             <th>No.</th>
                             <th>Nama</th>
                             <th>Kelas</th>
-                            <th>Tindak Lanjut</th>
+                            <th>Penanganan</th>
                             <th>Status</th>
                             <th>Berkas</th>
                         </tr>
