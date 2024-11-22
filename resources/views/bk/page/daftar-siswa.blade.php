@@ -69,7 +69,7 @@
                         <div id="modalCenter{{ $siswa->id }}" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-md modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header py-2 bg-info text-white">
+                                    <div class="modal-header py-2 text-white" style="background-color: #395886php arti">
                                         <h5 class="modal-title ps-2">Detail Siswa</h5>
                                     </div>
                                     <div class="modal-body">

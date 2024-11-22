@@ -6,7 +6,6 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PoinController;
 use App\Http\Controllers\BKController;
-use App\Http\Controllers\BoardController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserAdminController;
 use App\Http\Controllers\Auth\LoginController;

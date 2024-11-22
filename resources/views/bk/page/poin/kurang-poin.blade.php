@@ -4,7 +4,7 @@
 <div class="row d-flex">
     <div class="card col-md-2" style="opacity: 0"></div>
     <div class="card col-md-8">
-        <div class="card-header bg-success bg-gradient text-white">
+        <div class="card-header bg-gradient text-white" style="background-color: #395886">
             <h3 class="mt-2">
                 Jumlah Poin <b>{{ $siswa->nama }}</b> : {{ $siswa->poin }}
             </h3>

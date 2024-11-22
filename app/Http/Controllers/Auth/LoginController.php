@@ -23,7 +23,6 @@ class LoginController extends Controller
         $this->nisn = $this->findNisn();
     }
 
-    // login menggunakan email atau nisn
     public function findNisn()
     {
         $login = request()->input('nisn');
