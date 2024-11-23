@@ -1,13 +1,5 @@
 <header class="l-header">
     <div class="l-header__inner clearfix">
-        <div class="c-header-icon js-hamburger" style="border-left: 0; border-right: 1px solid #ccc;">
-            <div class="hamburger-toggle">
-                <span class="bar-top"></span>
-                <span class="bar-mid"></span>
-                <span class="bar-bot"></span>
-            </div>
-        </div>
-
         <div class="c-header-icon lol logo" style="border-left: 0; border-right: 1px solid #fff;">
             <img src="../img/sma1.jpg" width="35">
         </div>
