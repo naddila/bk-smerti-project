@@ -46,7 +46,7 @@
 <ul class="hp-ul" for=checki style="z-index: 1;">
     <a href="/home">
         <li class="{{ request()->is('home*') ? 'active' : '' }} hp-li" title="Dashboard">
-            <i class='bx bxs-grid-alt'></i>
+            <i class='fas fa-tachometer-alt text-light'></i>
             Dasbor
         </li>
     </a>
@@ -70,19 +70,19 @@
     </a>
     <a href="/master-siswa">
         <li class="{{ request()->is('master-siswa*', 'pelanggaran*') ? 'active' : '' }} hp-li" title="Pelanggaran">
-            <i class='fas fa-user-graduate'></i>
+            <i class='fas fa-exclamation-triangle text-dange'></i>
             Pelanggaran
         </li>
     </a>
     <a href="/penanganan">
         <li class="{{ request()->is('penanganan*') ? 'active' : '' }} hp-li" title="Penanganan">
-            <i class="fas fa-user-cog"></i>
+            <i class="fas fa-gavel text-light"></i>
             Penanganan
         </li>
     </a>
     <a href="/master-peraturan">
         <li class="{{ request()->is('master-peraturan*') ? 'active' : '' }} hp-li" title="Master Peraturan">
-            <i class='fas fa-user-graduate'></i>
+            <i class='ffa fa-clipboard text-light'></i>
             Peraturan
         </li>
     </a>

@@ -5,11 +5,11 @@
         <div class="card-body py-0">
             @if ($pesan->count())
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered">
-                        <thead class="text-white" style="background-color: #395886">
+                    <table class="table table-bordered bg-white">
+                        <thead class="text-dark">
                             <tr>
                                 <th>Sanksi</th>
-                                <th>Status</th>
+                                <th>Informasi</th>
                                 <th>Surat</th>
                             </tr>
                         </thead>

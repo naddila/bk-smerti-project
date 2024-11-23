@@ -1,39 +1,41 @@
 @extends('layouts.main')
-@section('title', 'Histori')
+@section('title', 'Riwayat Pelanggaran')
 @section('content')
     <div class="row justify-content-center">
-        <div class="card shadow px-0">
-            <div class="card-header" style="background-color: #395886">
-                <h3 class="fw-bolder mt-2 text-white">
-                    Histori {{ Auth::user()->name }}
+        <div class="card" style="background-color: white;">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h3 class="fw-bolder mt-2 text-dark">
+                    Riwayat Pelanggaran {{ Auth::user()->name }}
                 </h3>
             </div>
             <div class="card-body py-0">
                 @if ($histories->count())
-                    @foreach ($tanggal as $tgl)
-                        <b><p class="text-primary mb-1 mt-3 ml-1">{{ $tgl }}</p></b>
-                        @foreach ($histories as $history)
-                            @if ($history->getAttribute('tanggal') == $tgl)
-                                <div class="list-group mb-2">
-                                    <div class="border-hover list-group-item list-group-item-action flex-column align-items-start py-0 px-3"
-                                        style="background-color: #f8faff; border-radius: 6px; border-color:#f8faff;">
-                                        <div class="histori-part row" style="margin-bottom: .5rem;">
-                                            <div class="col-lg-2 row" style="margin-top: .5rem;">
-                                                <small class="px-0"
-                                                    style="height: 20px; width: auto;">{{ $history->created_at->diffForHumans() }}</small>
-                                            </div>
-                                            <div class="col-lg-10" style="margin-top: .5rem;">
-                                                <p class="mb-1 text-dark mt-2">{{ $history->rule->nama }}</p>
-                                                <div class="text-danger d-inline-flex">
-                                                    <b>+{{ $history->rule->poin }}</b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
+                    <div class="table-responsive">
+                        @foreach ($tanggal as $tgl)
+                            <h6 class="fw-bold" style="color: #395886">{{ date('d-m-Y', strtotime($tgl)) }}</h6>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Pelanggaran</th>
+                                        <th>Poin</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($histories as $history)
+                                        @if ($history->getAttribute('tanggal') == $tgl)
+                                            <tr>
+                                                <td>{{ $tgl }}</td>
+                                                <td>{{ $history->rule->nama }}</td>
+                                                <td class="text-danger font-weight-bold">+{{ $history->rule->poin }}</td>
+                                            </tr>
+                                        @endif
+                                    @endforeach
+
+                                </tbody>
+                            </table>
                         @endforeach
-                    @endforeach
+                    </div>
                 @else
                     <h5 class="text-secondary text-center py-1 mt-4">Histori tidak ada</h5>
                 @endif

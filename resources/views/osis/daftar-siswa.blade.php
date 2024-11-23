@@ -51,53 +51,45 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row ing ps-2 py-1">
-                                            <div class="col-4 dem">TTL</div>
+                                            <div class="col-4 dem">Nama</div>
                                             <div class="pisah">:</div>
-                                            <div class="col-7">
-                                                {{ $siswa->ttl }}
-                                            </div>
+                                            <div class="col-7">{{ $siswa->nama }}</div>
                                         </div>
                                         <div class="row ing ps-2 py-1">
-                                            <div class="col-4 dem">JK</div>
+                                            <div class="col-4 dem">NISN</div>
                                             <div class="pisah">:</div>
-                                            <div class="col-7">
-                                                {{ $siswa->jk }}
-                                            </div>
+                                            <div class="col-7">{{ $siswa->nisn }}</div>
+                                        </div>
+                                        <div class="row ing ps-2 py-1">
+                                            <div class="col-4 dem">Tempat/Tanggal Lahir</div>
+                                            <div class="pisah">:</div>
+                                            <div class="col-7">{{ $siswa->ttl }}</div>
+                                        </div>
+                                        <div class="row ing ps-2 py-1">
+                                            <div class="col-4 dem">Jenis Kelamin</div>
+                                            <div class="pisah">:</div>
+                                            <div class="col-7">{{ $siswa->jk }}</div>
                                         </div>
                                         <div class="row ing ps-2 py-1">
                                             <div class="col-4 dem">Agama</div>
                                             <div class="pisah">:</div>
-                                            <div class="col-7">
-                                                {{ $siswa->agama }}
-                                            </div>
+                                            <div class="col-7">{{ $siswa->agama }}</div>
                                         </div>
                                         <div class="row ing ps-2 py-1">
                                             <div class="col-4 dem">Alamat</div>
                                             <div class="pisah">:</div>
-                                            <div class="col-7">
-                                                {{ $siswa->alamat }}
-                                            </div>
+                                            <div class="col-7">{{ $siswa->alamat }}</div>
                                         </div>
                                         <div class="row ing ps-2 py-1">
                                             <div class="col-4 dem">No.Telp</div>
                                             <div class="pisah">:</div>
-                                            <div class="col-7">
-                                                <a class="linkind" style="color: #395886" href="tel:{{ $siswa->no_telp }}">
-                                                    {{ $siswa->no_telp }}
-                                                </a>
-                                            </div>
+                                            <div class="col-7">{{ $siswa->no_telp }}</div>
                                         </div>
                                         <div class="row ing ps-2 py-1">
                                             <div class="col-4 dem">No.Telp Rumah</div>
                                             <div class="pisah">:</div>
-                                            <div class="col-7">
-                                                <a class="linkind" style="color: #395886"
-                                                    href="tel:{{ $siswa->no_telp_rumah }}">
-                                                    {{ $siswa->no_telp_rumah }}
-                                                </a>
-                                            </div>
+                                            <div class="col-7">{{ $siswa->no_telp_rumah }}</div>
                                         </div>
-                                    </div>
                                     <div class="modal-footer p-2 bg-light">
                                         <button type="button" class="btn btn-sm btn-secondary"
                                             data-bs-dismiss="modal">Kembali</button>

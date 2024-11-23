@@ -49,25 +49,19 @@
 <ul class="hp-ul" for=checki style="z-index: 2;">
     <a href="/home">
         <li class="{{ request()->is('home*') ? 'active' : '' }} hp-li" title="Dashboard">
-            <i class='bx bxs-grid-alt'></i>
+            <i class='fas fa-tachometer-alt text-light'></i>
             Dasbor
         </li>
     </a>
     <a href="/guru/daftar-siswa">
         <li class="{{ request()->is('guru/daftar-siswa*') ? 'active' : '' }} hp-li" title="Daftar Siswa">
-            <i class="fas fa-user-graduate"></i>
-            Daftar Siswa
-        </li>
-    </a>
-    <a href="/guru/histori">
-        <li class="{{ request()->is('guru/histori*') ? 'active' : '' }} hp-li" title="Histori Siswa">
-            <i class="fas fa-calendar-alt"></i>
-            Histori Siswa
+            <i class="fas fa-exclamation-triangle text-dange"></i>
+            Pelanggaran
         </li>
     </a>
     <a href="/guru/penanganan">
         <li class="{{ request()->is('guru/penanganan*') ? 'active' : '' }} hp-li" title="Penanganan">
-            <i class="fas fa-calendar-alt"></i>
+            <i class="fas fa-gavel text-light"></i>
             Penanganan
         </li>
     </a>

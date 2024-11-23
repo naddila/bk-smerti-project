@@ -19,33 +19,7 @@ class GuruController extends Controller
         return view('guru.page.daftar-siswa', compact('siswas', 'wali_kelas'));
     }
 
-    // menampilkan daftar history kelas
-    public function master_history()
-    {
-        $wali_kelas = WaliKelas::firstWhere('user_id', auth()->user()->id);
-        $siswas = Student::firstWhere('kelas_id', $wali_kelas->kelas_id);
-
-        $siswa = Student::whereHas('history', function ($q) use ($wali_kelas) {
-            $q->where('kelas_id', $wali_kelas->kelas_id);
-        })->get();
-
-        $id_student = [];
-        foreach ($siswa as $item) {
-            $id_student[] = $item->id;
-        }
-
-        if (request('tanggal')) {
-            $histories = History::with('siswa')->where('tanggal', request('tanggal'))->filter(request(['tanggal']))->paginate(7)->withQueryString();
-            $tanggal = date('d-m-Y', strtotime(request('tanggal')));
-        } else {
-            $histories = History::whereIn('student_id', $id_student)->latest()->filter(request(['tanggal']))->paginate(7)->withQueryString();;
-            $tanggal = $histories->unique('tanggal')->pluck('tanggal');
-        }
-
-        return view('guru.page.master-history', compact('histories', 'tanggal', 'wali_kelas', 'siswas'));
-    }
-
-    // menampilkan riwayat siswa berdasarkan tanggal
+    // menampilkan riwayat siswa
     public function history_siswa($id)
     {
         $wali_kelas = WaliKelas::firstWhere('user_id', auth()->user()->id);
@@ -78,8 +52,8 @@ class GuruController extends Controller
             'confirmed' => ':attribute tidak cocok!',
         ];
         $request->validate([
-            'old_password' => 'required|min:8|max:255',
-            'new_password' => 'required|confirmed|min:8|max:255',
+            'password_lama' => 'required|min:8|max:255',
+            'password_baru' => 'required|confirmed|min:8|max:255',
         ], $message);
 
 

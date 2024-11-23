@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Data Penanganan')
+@section('title', 'Penanganan')
 @section('content')
     <div class="row justify-content-center">
         <div class="card" style="background-color: white;">
@@ -29,7 +29,7 @@
                                         @if ($tindak->status == 0)
                                             <form action="/penanganan/{{ $tindak->id }}" method="post">
                                                 @csrf
-                                                <button type="submit" class="btn btn-sm btn-primary">Konfirmasi</button>
+                                                <button type="submit" class="btn btn-sm btn-primary">Selesai</button>
                                             </form>
                                         @else
                                             <button class="btn btn-secondary btn-sm" disabled>Selesai -
@@ -44,7 +44,7 @@
                                         @if ($tindak->status == 1)
                                             <form action="/penanganan/{{ $tindak->id }}" method="post">
                                                 @csrf
-                                                <button class="btn btn-sm btn-primary">Konfirmasi</button>
+                                                <button class="btn btn-sm btn-primary">Selesai</button>
                                             </form>
                                         @endif
                                         @if ($tindak->status == 2)

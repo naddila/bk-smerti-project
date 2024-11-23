@@ -45,6 +45,8 @@ class StudentController extends Controller
         } else {
 
             $siswa->nama = $request->post('name');
+            $siswa->nisn = $request->post('nisn');
+            $siswa->ttl = $request->post('ttl');
             $siswa->alamat = $request->post('alamat');
             $siswa->no_telp = $request->post('no_telp');
             $siswa->alamat = $request->post('alamat');
@@ -130,8 +132,8 @@ class StudentController extends Controller
             'confirmed' => ':attribute tidak cocok!',
         ];
         $request->validate([
-            'old_password' => 'required|min:8|max:255',
-            'new_password' => 'required|confirmed|min:8|max:255',
+            'password_lama' => 'required|min:8|max:255',
+            'password_baru' => 'required|confirmed|min:8|max:255',
         ], $message);
 
 

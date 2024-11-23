@@ -14,19 +14,9 @@
                     data-toggle="tooltip" title="Dashboard">
                     <a class="c-menu__item__inner" href="/home">
                         <div class="ic">
-                            <i class='bx bxs-grid-alt'></i>
+                            <i class='fas fa-tachometer-alt text-light'></i>
                         </div>
                         <div class="c-menu-item__title"><span>Dasbor</span></div>
-                    </a>
-                </li>
-
-                <li class="c-menu__item {{ request()->is('histori*') ? 'is-active' : '' }}  has-submenu"
-                    data-toggle="tooltip" title="Histori">
-                    <a class="c-menu__item__inner" href="/histori">
-                        <div class="ic">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="c-menu-item__title"><span>Histori</span></div>
                     </a>
                 </li>
 
@@ -37,6 +27,16 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="c-menu-item__title"><span>Sanksi</span></div>
+                    </a>
+                </li>
+
+                <li class="c-menu__item {{ request()->is('histori*') ? 'is-active' : '' }}  has-submenu"
+                    data-toggle="tooltip" title="Histori">
+                    <a class="c-menu__item__inner" href="/histori">
+                        <div class="ic">
+                            <i class="fas fa-history text-light"></i>
+                        </div>
+                        <div class="c-menu-item__title"><span>Pelanggaran</span></div>
                     </a>
                 </li>
             </ul>

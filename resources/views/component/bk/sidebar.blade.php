@@ -14,7 +14,7 @@
                     data-toggle="tooltip" title="Dashboard">
                     <a class="c-menu__item__inner" href="/home">
                         <div class="ic">
-                            <i class='bx bxs-grid-alt'></i>
+                            <i class='fas fa-tachometer-alt text-light'></i>
                         </div>
                         <div class="c-menu-item__title">
                             <span>Dasbor</span>
@@ -66,7 +66,7 @@
                     data-toggle="tooltip" title="Pelanggaran">
                     <a class="c-menu__item__inner" href="/master-siswa">
                         <div class="ic">
-                            <i class="fas fa-user-graduate"></i>
+                            <i class="fas fa-exclamation-triangle text-dange"></i>
                         </div>
                         <div class="c-menu-item__title">
                             <span>Pelanggaran</span>
@@ -79,7 +79,7 @@
                     data-toggle="tooltip" title="Penanganan">
                     <a class="c-menu__item__inner" href="/penanganan">
                         <div class="ic">
-                            <i class="fas fa-user-cog"></i>
+                            <i class="fas fa-gavel text-light"></i>
                         </div>
                         <div class="c-menu-item__title">
                             <span>Penanganan</span>
@@ -92,7 +92,7 @@
                     data-toggle="tooltip" title="Peraturan">
                     <a class="c-menu__item__inner" href="/master-peraturan">
                         <div class="ic">
-                            <i class="fas fa-user-cog"></i>
+                            <i class="fa fa-clipboard text-light"></i>
                         </div>
                         <div class="c-menu-item__title">
                             <span>Peraturan</span>

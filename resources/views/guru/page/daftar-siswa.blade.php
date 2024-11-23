@@ -1,15 +1,9 @@
 @extends('layouts.main')
-@section('title', 'Daftar Siswa')
+@section('title', 'Pelanggaran Siswa')
 @section('content')
-    <div class="card shadow px-0">
-        <div class="card-header text-white" style="background-color: #395886">
-            <h3 class="fw-bolder mt-2 d-inline-flex">
-                List Siswa {{ $wali_kelas->kelas->nama_kelas }}
-            </h3>
-        </div>
-
+<div class="card" style="background-color: white;">
         <div class="card-body">
-            <table id="table_data_user" class="table table-bordered display nowrap" cellspacing="0" width="100%">
+            <table id="table_data_user" class="table table-bordered w-100" style="border-collapse: collapse;">
                 <thead class="thead-inverse">
                     <tr>
                         <th>No</th>
@@ -29,38 +23,48 @@
                             <td>{{ $siswa->nisn }}</td>
                             <td>{{ $siswa->nama }}</td>
                             <td>{{ $siswa->kelas->nama_kelas }}</td>
-                            <td><a href="/guru/histori/{{ $siswa->id }}"
+                            <td><a href="/guru/histori/{id}{{ $siswa->id }}"
                                     @if ($siswa->poin == 0) class="text-success" @endif
                                     @if ($siswa->poin <= 45) style="color:#fcbc05;" @endif
-                                    @if ($siswa->poin <= 90) style="color:#fd5d03;" @endif
-                                    @if ($siswa->poin >= 95) class="text-danger" @endif>
+                                    @if ($siswa->poin <= 80) style="color:#fd5d03;" @endif
+                                    @if ($siswa->poin >= 85) class="text-danger" @endif>
                                     <b>{{ $siswa->poin }}</b>
                                 </a>
                             </td>
                             <td data-label="Posisi">
-                                {{-- <a href="#modalCenter{{ $siswa->id }}" role="button" class="clickind btn btn-sm btn-info"
-                                    data-bs-toggle="modal">Detail</a> --}}
 
                                 <button type="button" class="btn btn-sm btn-info mb-1" data-bs-toggle="modal"
-                                    data-bs-target="#modalCenter{{ $siswa->id }}">Detail
+                                    data-bs-target="#modalCenter{{ $siswa->id }}">Data Siswa
                                 </button>
+                                <a href="{{ url('/guru/histori/' . $siswa->id) }}" class="btn btn-sm btn-warning mb-1">Pelanggaran
+                                </a>
                             </td>
                         </tr>
                         {{-- Modal Detail --}}
                         <div id="modalCenter{{ $siswa->id }}" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-md modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header py-2 text-white" style="background-color: #395886">
+                                    <div class="modal-header py-2">
                                         <h5 class="modal-title ps-2">Detail Siswa</h5>
                                     </div>
                                     <div class="modal-body">
                                         <div class="row ing ps-2 py-1">
-                                            <div class="col-4 dem">TTL</div>
+                                            <div class="col-4 dem">Nama</div>
+                                            <div class="pisah">:</div>
+                                            <div class="col-7">{{ $siswa->nama }}</div>
+                                        </div>
+                                        <div class="row ing ps-2 py-1">
+                                            <div class="col-4 dem">NISN</div>
+                                            <div class="pisah">:</div>
+                                            <div class="col-7">{{ $siswa->nisn }}</div>
+                                        </div>
+                                        <div class="row ing ps-2 py-1">
+                                            <div class="col-4 dem">Tempat/Tanggal Lahir</div>
                                             <div class="pisah">:</div>
                                             <div class="col-7">{{ $siswa->ttl }}</div>
                                         </div>
                                         <div class="row ing ps-2 py-1">
-                                            <div class="col-4 dem">JK</div>
+                                            <div class="col-4 dem">Jenis Kelamin</div>
                                             <div class="pisah">:</div>
                                             <div class="col-7">{{ $siswa->jk }}</div>
                                         </div>

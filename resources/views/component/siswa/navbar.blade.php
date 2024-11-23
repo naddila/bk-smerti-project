@@ -49,20 +49,22 @@
 <ul class="hp-ul" for=checki style="z-index: 2;">
     <a href="/home">
         <li class="{{ request()->is('home*') ? 'active' : '' }} hp-li" title="Dashboard">
-            <i class='bx bxs-grid-alt'></i>
+            <i class='fas fa-tachometer-alt text-light'></i>
             Dasbor
         </li>
     </a>
-    <a href="/histori">
-        <li class="{{ request()->is('histori*') ? 'active' : '' }} hp-li" title="Histori">
-            <i class="fas fa-calendar-alt"></i>
-            Histori
-        </li>
-    </a>
+
     <a href="/pesan">
         <li class="{{ request()->is('pesan*') ? 'active' : '' }} hp-li" title="Pesan">
             <i class="fas fa-envelope"></i>
             Sanksi
+        </li>
+    </a>
+
+    <a href="/histori">
+        <li class="{{ request()->is('histori*') ? 'active' : '' }} hp-li" title="Histori">
+            <i class="fas fa-history text-light"></i>
+            Pelanggaran
         </li>
     </a>
 </ul>

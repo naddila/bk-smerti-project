@@ -2,12 +2,7 @@
 @section('title', 'Penanganan')
 @section('content')
     <div class="row justify-content-center">
-        <div class="card shadow px-0">
-            <div class="card-header text-white" style="background-color: #395886">
-                <h3 class="fw-bolder mt-2">
-                    Penanganan {{ $wali_kelas->kelas->nama_kelas }}
-                </h3>
-            </div>
+        <div class="card" style="background-color: white;">
             <div class="card-body">
                 <table id="table_data_user" class="table table-bordered display nowrap" cellspacing="0" width="100%">
                     <thead class="thead-inverse">
@@ -30,10 +25,10 @@
                                     @if ($tindak->status == 0)
                                         <form action="/guru/penanganan/{{ $tindak->id }}" method="post">
                                             @csrf
-                                            <button type="submit" class="btn btn-sm" style="background-color: #395886; color:white;">Konfirm</button>
+                                            <button type="submit" class="btn btn-sm" style="background-color: #395886; color:white;">Selesai</button>
                                         </form>
                                     @else
-                                        <button class="btn btn-sm" style="background-color: #395886; color:white;" disabled>Terkonfirmasi -
+                                        <button class="btn btn-sm" style="background-color: #395886; color:white;" disabled>Selesai -
                                             {{ $tindak->created_at->format('d/m/Y') }}</button>
                                     @endif
                                 </td>

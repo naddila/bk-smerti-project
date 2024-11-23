@@ -4,13 +4,7 @@
     <div class="row d-flex">
         <div class="card col-md-2" style="opacity: 0"></div>
         <div class="card col-md-6 offset-lg-1">
-            <div class="card-header text-white" style="background-color:#395886">
-                <h3 class="mt-2">
-                    Ubah Password
-                </h3>
-            </div>
-
-            <div class="card-body">
+            <div class="card-body" style="background-color: white;">
                 @if (session('error'))
                     <div class="alert alert-danger" role="alert">
                         {{ session('error') }}
@@ -42,9 +36,9 @@
                         <input name="new_password_confirmation" type="password" class="form-control"
                             id="confirmNewPasswordInput" placeholder="Konfirmasi Password">
                     </div>
-                    <div class="card-footer" style="padding: 10px 15px;">
-                        <a class="btn btn-sm btn-secondary" href="/home">Kembali</a>
-                        <button type="submit" class="btn btn-sm btn-success" id="btn-pass" style="background-color: #395886; border-color: #395886;">Perbarui</button>
+                    <div class="d-flex justify-content-between">
+                        <a class="btn btn-secondary btn-sm" href="/home">Kembali</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Perbarui</button>
                     </div>
                 </form>
             </div>

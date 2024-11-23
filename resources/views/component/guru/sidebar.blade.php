@@ -14,7 +14,7 @@
                     data-toggle="tooltip" title="Dashboard">
                     <a class="c-menu__item__inner" href="/home">
                         <div class="ic">
-                            <i class='bx bxs-grid-alt'></i>
+                            <i class='fas fa-tachometer-alt text-light'></i>
                         </div>
                         <div class="c-menu-item__title"><span>Dasbor</span></div>
                     </a>
@@ -24,25 +24,16 @@
                     data-toggle="tooltip" title="Daftar Siswa">
                     <a class="c-menu__item__inner" href="/guru/daftar-siswa">
                         <div class="ic">
-                            <i class="fas fa-user-graduate"></i>
+                            <i class="fas fa-exclamation-triangle text-dange"></i>
                         </div>
-                        <div class="c-menu-item__title"><span>Daftar Siswa</span></div>
-                    </a>
-                </li>
-                <li class="c-menu__item {{ request()->is('guru/histori*') ? 'is-active' : '' }} has-submenu"
-                    data-toggle="tooltip" title="Histori Siswa">
-                    <a class="c-menu__item__inner" href="/guru/histori">
-                        <div class="ic">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="c-menu-item__title"><span>Histori Siswa</span></div>
+                        <div class="c-menu-item__title"><span>Pelanggaran</span></div>
                     </a>
                 </li>
                 <li class="c-menu__item {{ request()->is('guru/penanganan*') ? 'is-active' : '' }} has-submenu"
                     data-toggle="tooltip" title="Penanganan">
                     <a class="c-menu__item__inner" href="/guru/penanganan">
                         <div class="ic">
-                            <i class="fas fa-calendar-alt"></i>
+                            <i class="fas fa-gavel text-light"></i>
                         </div>
                         <div class="c-menu-item__title"><span>Penanganan</span></div>
                     </a>

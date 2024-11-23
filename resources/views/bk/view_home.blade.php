@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-auto">
                     <div class="icon-shape green icon-area">
-                        <i class="fas fa-user-graduate text-dark" aria-hidden="true"></i>
+                        <i class="fas fa-user text-dark" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-auto">
                     <div class="icon-shape green icon-area">
-                        <i class="fas fa-user-graduate text-dark" aria-hidden="true"></i>
+                        <i class="fas fa-chalkboard-teacher text-dark" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,6 @@
 </div>
 
 <!-- Card Peraturan -->
-{{-- card siswa --}}
 <div class="cord col-lg-3 col-md-6">
     <div class="card bg-white">
         <div class="card-body border-left-green">
@@ -91,7 +90,7 @@
                 </div>
                 <div class="col-auto">
                     <div class="icon-shape green icon-area">
-                        <i class="fas fa-user-graduate text-dark" aria-hidden="true"></i>
+                        <i class="fa fa-clipboard text-dark" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>

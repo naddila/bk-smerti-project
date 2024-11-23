@@ -14,7 +14,7 @@
                     data-toggle="tooltip" title="Dashboard">
                     <a class="c-menu__item__inner" href="/home">
                         <div class="ic">
-                            <i class='bx bxs-grid-alt'></i>
+                            <i class='fas fa-tachometer-alt text-light'></i>
                         </div>
                         <div class="c-menu-item__title"><span>Dasbor</span></div>
                     </a>
@@ -24,7 +24,7 @@
                     data-toggle="tooltip" title="Daftar Siswa">
                     <a class="c-menu__item__inner" href="/osis/daftar-siswa">
                         <div class="ic">
-                            <i class="fas fa-user-graduate"></i>
+                            <i class="fas fa-exclamation-triangle text-dange"></i>
                         </div>
                         <div class="c-menu-item__title">
                             <span>Pelanggaran</span>
