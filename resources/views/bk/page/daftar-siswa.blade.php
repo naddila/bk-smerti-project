@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Daftar Siswa')
+@section('title', 'Pelanggaran Siswa')
 @section('content')
     <div class="card" style="background-color: white;">
         <div class="card-body">
@@ -21,7 +21,7 @@
                             <td>{{ $siswa->nisn }}</td>
                             <td>{{ $siswa->nama }}</td>
                             <td>{{ $siswa->kelas->nama_kelas }}</td>
-                            <td><a href="/master-histori/{{ $siswa->id }}"
+                            <td><a href="/histori/{id}{{ $siswa->id }}"
                                     @if ($siswa->poin == 0) style="color:green;" @endif
                                     @if ($siswa->poin <= 45) style="color:#fcbc05;" @endif
                                     @if ($siswa->poin <= 80) style="color:#fd5d03;" @endif
@@ -36,7 +36,8 @@
                                 </button>
                                 <!-- Button Tambah -->
                                 <a href="/pelanggaran/tambah/{{ $siswa->nisn }}" class="btn btn-sm btn-danger mb-1">Catat Poin
-
+                                </a>
+                                <a href="{{ url('/histori/' . $siswa->id) }}" class="btn btn-sm btn-warning mb-1">Pelanggaran
                                 </a>
                             </td>
                         </tr>

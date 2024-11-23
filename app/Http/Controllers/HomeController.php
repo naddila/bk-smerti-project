@@ -34,7 +34,7 @@ class HomeController extends Controller
         if (auth()->user()->role == 1) {
             $siswas = Student::all();
             $users = User::all();
-            $walikelas = Walikelas::all();
+            $walikelas = WaliKelas::all();
             $peraturan = Peraturan::all();
             $penanganan = Penanganan::latest()->take(3)->get();
             $histories = History::latest()->take(3)->get();

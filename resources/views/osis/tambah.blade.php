@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Tambah Poin')
+@section('title', 'Tambah Pelanggaran')
 @section('content')
 @if (session()->has('error'))
 <div class="alert alert-danger alert-dismissible fade show ms-auto" role="alert">
@@ -7,12 +7,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<div class="card">
-    <div class="card-header text-white" style="background-color: #395886">
-        <h3 class="mt-2">
-            Pelanggaran yang dilakukan oleh <b>{{ $siswa->nama }}</b>
-        </h3>
-    </div>
+<div class="card" style="background-color: white;">
     <div class="card-body">
         <form action="/osis/pelanggaran/{{ $siswa->id }}" method="post" id="form">
 

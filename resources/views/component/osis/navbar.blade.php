@@ -56,19 +56,7 @@
     <a href="/osis/daftar-siswa">
         <li class="{{ request()->is('/osis/daftar-siswa*', 'pelanggaran*') ? 'active' : '' }} hp-li" title="Master Siswa">
             <i class='fas fa-user-graduate'></i>
-            Data Siswa
+            Pelanggaran
         </li>
     </a>
-    <a href="/osis/master-history">
-        <li class="{{ request()->is('/osis/master-history*') ? 'active' : '' }} hp-li" title="Master Histori">
-            <i class="fas fa-user-graduate"></i>
-            Data Histori
-        </li>
-    </a>
-    {{-- <a href="/penanganan">
-        <li class="{{ request()->is('penanganan*') ? 'active' : '' }} hp-li" title="Penanganan">
-            <i class="fas fa-user-cog"></i>
-            Penanganan
-        </li>
-    </a> --}}
 </ul>

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Tambah Poin')
+@section('title', 'Tambah Pelanggaran')
 @section('content')
 @if (session()->has('error'))
 <div class="alert alert-danger alert-dismissible fade show ms-auto" role="alert">

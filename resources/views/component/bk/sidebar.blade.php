@@ -61,28 +61,15 @@
                     </a>
                 </li>
 
-                {{-- master siswa --}}
+                {{-- pelanggaran siswa --}}
                 <li class="c-menu__item {{ request()->is('master-siswa*', 'pelanggaran*') ? 'is-active' : '' }} has-submenu"
-                    data-toggle="tooltip" title="Master Siswa">
+                    data-toggle="tooltip" title="Pelanggaran">
                     <a class="c-menu__item__inner" href="/master-siswa">
                         <div class="ic">
                             <i class="fas fa-user-graduate"></i>
                         </div>
                         <div class="c-menu-item__title">
-                            <span>Data Siswa</span>
-                        </div>
-                    </a>
-                </li>
-
-                {{-- master histori --}}
-                <li class="c-menu__item {{ request()->is('master-histori*') ? 'is-active' : '' }} has-submenu"
-                    data-toggle="tooltip" title="Master Histori">
-                    <a class="c-menu__item__inner" href="/master-histori">
-                        <div class="ic">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="c-menu-item__title">
-                            <span>Data Histori</span>
+                            <span>Pelanggaran</span>
                         </div>
                     </a>
                 </li>

@@ -69,9 +69,9 @@ Route::group(['middleware' => ['auth']], function () {
         // Tambah Poin
         Route::get('/pelanggaran/tambah/{siswa:nisn}', [PoinController::class, 'tambah_view']);
         Route::put('/pelanggaran/{id}', [PoinController::class, 'tambah_poin']);
-        // Histori
-        Route::get('/master-histori', [BKController::class, 'histori_index']);
-        Route::get('/master-histori/{id}', [BKController::class, 'histori_admin']);
+        // Route::get('/master-histori', [BKController::class, 'histori_index']);
+        // Riwayat Pelanggaran
+        Route::get('/histori/{id}', [BKController::class, 'riwayat_siswa']);
         // Penanganan
         Route::get('/penanganan', [PenangananController::class, 'index']);
         Route::post('/penanganan/{id}', [PenangananController::class, 'konfirmasi']);
@@ -96,9 +96,8 @@ Route::group(['middleware' => ['auth']], function () {
         // Tambah Poin
         Route::get('/osis/pelanggaran/tambah/{siswa:nisn}', [OsisController::class, 'osis_tambah_view']);
         Route::put('/osis/pelanggaran/{id}', [OsisController::class, 'osis_tambah_poin']);
-        // Master Histori
-        Route::get('/osis/master-history', [OsisController::class, 'osis_histori_index']);
-        Route::get('/osis/master-history/{id}', [OsisController::class, 'osis_histori_admin']);
+        // Riwayat Pelanggaran
+        Route::get('/osis/history/{id}', [OsisController::class, 'osis_histori']);
         // Edit pass
         Route::get('/osis/update-pass', [OsisController::class, 'view_edit'])->name('osis.view_edit');
         Route::put('/osis/update-pass/{id}', [OsisController::class, 'ubah_pass'])->name('osis.ubah_pass');

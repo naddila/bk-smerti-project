@@ -19,7 +19,7 @@
                         <div class="c-menu-item__title"><span>Dasbor</span></div>
                     </a>
                 </li>
-                {{-- master siswa --}}
+                {{-- pelanggaran --}}
                 <li class="c-menu__item {{ request()->is('osis/daftar-siswa*', 'osis/pelanggaran*') ? 'is-active' : '' }} has-submenu"
                     data-toggle="tooltip" title="Daftar Siswa">
                     <a class="c-menu__item__inner" href="/osis/daftar-siswa">
@@ -27,19 +27,7 @@
                             <i class="fas fa-user-graduate"></i>
                         </div>
                         <div class="c-menu-item__title">
-                            <span>Data Siswa</span>
-                        </div>
-                    </a>
-                </li>
-                {{-- master histori --}}
-                <li class="c-menu__item {{ request()->is('/osis/master-history*') ? 'is-active' : '' }} has-submenu"
-                    data-toggle="tooltip" title="Master Histori">
-                    <a class="c-menu__item__inner" href="/osis/master-history">
-                        <div class="ic">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="c-menu-item__title">
-                            <span>Data Histori</span>
+                            <span>Pelanggaran</span>
                         </div>
                     </a>
                 </li>

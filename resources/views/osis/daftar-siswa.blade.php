@@ -1,30 +1,9 @@
 @extends('layouts.main')
-@section('title', 'Master Siswa')
+@section('title', 'Pelanggaran Siswa')
 @section('content')
-    <div class="card shadow px-0">
-        {{-- header --}}
-        <div class="card-header" style="background-color: #395886">
-            <h3 class="fw-bolder mt-2 d-inline-flex text-white">List Siswa</h3>
-            <div class="dropdown float-right">
-                <button class="btn bg-gradient btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Filter Kelas</button>
-                <ul class="dropdown-menu"
-                    style="max-height: 180px; overflow-y: auto;
-                border: 1px solid #999; border-radius: 7px;">
-                    @foreach ($kelas as $item)
-                        <li>
-                            <a class="dropdown-item text-decoration-none author" style="padding: 5px 0 5px 15px;"
-                                href="/master-siswa?kelas={{ $item->nama_kelas }}">
-                                {{ $item->nama_kelas }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-
+    <div class="card" style="background-color: white;">
         <div class="card-body">
-            <table id="table_data_user" class="table table-bordered display md:nowrap" cellspacing="0" width="100%"
+            <table id="table_data_user" class="table table-bordered w-100" style="border-collapse: collapse;"
                 style="z-index: 2;">
                 <thead class="thead-inverse">
                     <th>No.</th>
@@ -42,7 +21,7 @@
                             <td>{{ $siswa->nisn }}</td>
                             <td>{{ $siswa->nama }}</td>
                             <td>{{ $siswa->kelas->nama_kelas }}</td>
-                            <td><a href="/master-histori/{{ $siswa->id }}"
+                            <td><a href="/osis/history/{id}/{{ $siswa->id }}"
                                     @if ($siswa->poin == 0) style="color:green;" @endif
                                     @if ($siswa->poin <= 45) style="color:#fcbc05;" @endif
                                     @if ($siswa->poin <= 80) style="color:#fd5d03;" @endif
@@ -53,16 +32,12 @@
                             <td data-label="Posisi">
                                 <!-- Button Info -->
                                 <button type="button" class="btn btn-sm btn-info mb-1" data-bs-toggle="modal"
-                                    data-bs-target="#modalCenter{{ $siswa->id }}">Detail
-
+                                    data-bs-target="#modalCenter{{ $siswa->id }}">Data Siswa
                                 </button>
                                 <!-- Button Tambah -->
-                                <a href="/osis/pelanggaran/tambah/{{ $siswa->nisn }}" class="btn btn-sm btn-danger mb-1">
-                                    Tambah
+                                <a href="/osis/pelanggaran/tambah/{{ $siswa->nisn }}" class="btn btn-sm btn-danger mb-1">Catat Poin
                                 </a>
-                                <!-- Button Kurang -->
-                                <a href="/osis/pelanggaran/kurang/{{ $siswa->nisn }}" class="btn btn-sm btn-success mb-1">
-                                    Kurang
+                                <a href="{{ url('/osis/history/' . $siswa->id) }}" class="btn btn-sm btn-warning mb-1">Pelanggaran
                                 </a>
                             </td>
                         </tr>
@@ -71,7 +46,7 @@
                         <div id="modalCenter{{ $siswa->id }}" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-md modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header py-2 text-white" style="background-color: #395886">
+                                    <div class="modal-header py-2">
                                         <h5 class="modal-title ps-2">Detail Siswa</h5>
                                     </div>
                                     <div class="modal-body">
@@ -107,8 +82,7 @@
                                             <div class="col-4 dem">No.Telp</div>
                                             <div class="pisah">:</div>
                                             <div class="col-7">
-                                                <a class="linkind" style="color: darkblue"
-                                                    href="tel:{{ $siswa->no_telp }}">
+                                                <a class="linkind" style="color: #395886" href="tel:{{ $siswa->no_telp }}">
                                                     {{ $siswa->no_telp }}
                                                 </a>
                                             </div>
@@ -117,7 +91,7 @@
                                             <div class="col-4 dem">No.Telp Rumah</div>
                                             <div class="pisah">:</div>
                                             <div class="col-7">
-                                                <a class="linkind" style="color: darkblue"
+                                                <a class="linkind" style="color: #395886"
                                                     href="tel:{{ $siswa->no_telp_rumah }}">
                                                     {{ $siswa->no_telp_rumah }}
                                                 </a>

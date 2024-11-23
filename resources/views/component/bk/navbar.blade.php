@@ -69,16 +69,9 @@
         </li>
     </a>
     <a href="/master-siswa">
-        <li class="{{ request()->is('master-siswa*', 'pelanggaran*') ? 'active' : '' }} hp-li" title="Master Siswa">
+        <li class="{{ request()->is('master-siswa*', 'pelanggaran*') ? 'active' : '' }} hp-li" title="Pelanggaran">
             <i class='fas fa-user-graduate'></i>
-            Data Siswa
-        </li>
-    </a>
-
-    <a href="/master-histori">
-        <li class="{{ request()->is('master-histori*') ? 'active' : '' }} hp-li" title="Master Histori">
-            <i class="fas fa-calendar-alt"></i>
-            Data Histori
+            Pelanggaran
         </li>
     </a>
     <a href="/penanganan">

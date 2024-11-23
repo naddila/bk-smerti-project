@@ -44,7 +44,7 @@ class OsisController extends Controller
     // tamnpilan tambah poin
     public function osis_tambah_view(Student $siswa)
     {
-        return view('osis.poin.tambah', [
+        return view('osis.tambah', [
             'siswa' => $siswa,
             'rules' => Peraturan::oldest()->filter(request('search'))->get()
         ]);
@@ -126,22 +126,8 @@ class OsisController extends Controller
     }
 
 
-    // master histori (menampilkan halaman histori siswa)
-    public function osis_histori_index()
-    {
-        if (request('tanggal')) {
-            $histories = History::with('siswa')->where('tanggal', request('tanggal'))->filter(request(['tanggal']))->paginate(7)->withQueryString();
-            $tanggal = date('d-m-Y', strtotime(request('tanggal')));
-        } else {
-            $histories = History::latest()->with('siswa')->filter(request(['tanggal']))->paginate(7)->withQueryString();
-            $tanggal = $histories->unique('tanggal')->pluck('tanggal');
-        };
-
-        return view('osis.history.master_history', compact('histories', 'tanggal'));
-    }
-
-    // untuk menampilkan histori berdasarkan tanggal
-    public function osis_histori_admin($id)
+    // untuk menampilkan histori
+    public function osis_histori($id)
     {
         $siswa = Student::findOrFail($id);
         if (request('tanggal')) {
@@ -151,7 +137,7 @@ class OsisController extends Controller
             $histories = History::latest()->with('siswa')->where('student_id', $id)->filter(request(['tanggal']))->paginate(7)->withQueryString();
             $tanggal = $histories->unique('tanggal')->pluck('tanggal');
         };
-        return view('osis.history.history', compact('histories', 'tanggal', 'siswa'));
+        return view('osis.history', compact('histories', 'tanggal', 'siswa'));
     }
 
     // ubah password osis
@@ -170,8 +156,8 @@ class OsisController extends Controller
             'confirmed' => ':attribute tidak cocok!',
         ];
         $request->validate([
-            'old_password' => 'required|min:8|max:255',
-            'new_password' => 'required|confirmed|min:8|max:255',
+            'password_lama' => 'required|min:8|max:255',
+            'password_baru' => 'required|confirmed|min:8|max:255',
         ], $message);
 
 

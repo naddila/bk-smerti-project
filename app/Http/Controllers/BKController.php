@@ -25,23 +25,9 @@ class BKController extends Controller
         ]);
     }
 
-    // master histori (menampilkan halaman histori siswa)
-    public function histori_index()
+    public function riwayat_siswa($id)
     {
-        if (request('tanggal')) {
-            $histories = History::with('siswa')->where('tanggal', request('tanggal'))->filter(request(['tanggal']))->paginate(7)->withQueryString();
-            $tanggal = date('d-m-Y', strtotime(request('tanggal')));
-        } else {
-            $histories = History::latest()->with('siswa')->filter(request(['tanggal']))->paginate(7)->withQueryString();
-            $tanggal = $histories->unique('tanggal')->pluck('tanggal');
-        };
 
-        return view('bk.page.histori.master-history', compact('histories', 'tanggal'));
-    }
-
-    // untuk menampilkan histori berdasarkan tanggal
-    public function histori_admin($id)
-    {
         $siswa = Student::findOrFail($id);
         if (request('tanggal')) {
             $histories = History::with('siswa')->where('tanggal', request('tanggal'))->where('student_id', $id)->filter(request(['tanggal']))->paginate(7)->withQueryString();
@@ -69,8 +55,8 @@ class BKController extends Controller
             'confirmed' => ':attribute tidak cocok!',
         ];
         $request->validate([
-            'old_password' => 'required|min:8|max:255',
-            'new_password' => 'required|confirmed|min:8|max:255',
+            'password_lama' => 'required|min:8|max:255',
+            'password_baru' => 'required|confirmed|min:8|max:255',
         ], $message);
 
 
