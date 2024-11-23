@@ -2,8 +2,8 @@
 aria-hidden="true">
 <div class="modal-dialog modal-md modal-dialog-centered">
     <div class="modal-content">
-        <div class="modal-header fs-4 fw-bold" style="padding: 15px; background-color: #395886;">
-            <h4 class="modal-title" id="myModalLabel" style="color: white;">Edit Pengguna</h4>
+        <div class="modal-header fs-4 fw-bold" style="padding: 15px;">
+            <h4 class="modal-title" id="myModalLabel" >Edit Pengguna</h4>
         </div>
 
         <div class="modal-body">

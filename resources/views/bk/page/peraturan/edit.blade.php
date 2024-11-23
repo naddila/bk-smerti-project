@@ -18,7 +18,7 @@
             <label for="jenis_peraturan_id" class="form-label">Kategori</label>
             <input type="text" name="jenis_peraturan_id" class="form-control" id="jenis_peraturan_id" value="{{ $peraturan->jenis_peraturan_id }}" required>
         </div>
-        <button type="submit" class="btn btn-success">Update</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>
 @endsection

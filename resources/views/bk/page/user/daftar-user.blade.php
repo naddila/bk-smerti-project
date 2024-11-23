@@ -13,20 +13,21 @@
 @endpush
 
 @section('content')
-    <div class="card shadow px-0">
-        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #395886;">
-            <h3 class="fw-bolder mt-2 d-inline-flex text-white">Daftar Pengguna</h3>
-            <button type="button" class="btn btn-md btn-light text-primary float-end" data-bs-toggle="modal" data-bs-target="#addUserModal">
+    <div class="card" style="background-color: white;">
+        <div class="card-header" style="border-bottom: 1px solid #ccc; padding: 10px;">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                 <i class="fas fa-user-plus me-1"></i> Tambah
             </button>
         </div>
 
-        <div class="card-body">
+        <div class="card-body" style="padding: 20px;">
             @if (session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
+                <div class="alert alert-success" style="margin-bottom: 15px;">
+                    {{ session('success') }}
+                </div>
             @endif
 
-            <table id="table_data_user" class="table table-bordered display" cellspacing="0" width="100%">
+            <table id="table_data_user" class="table table-bordered w-100" style="border-collapse: collapse;">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -46,11 +47,11 @@
                             <td class="{{ $user->info == 1 ? 'text-success' : 'text-danger' }}">
                                 {{ $user->info == 1 ? 'Sudah' : 'Belum' }}
                             </td>
-                            <td style="font-weight:600; color: {{ $user->role == 1 ? '#395886' : ($user->role == 2 ? '#628ecb' : '#628ecb') }}">
+                            <td class="font-weight-regular" style="color: {{ $user->role == 1 ? 'dark-gray' : ($user->role == 2 ? 'dark-gray' : 'dark-gray') }}">
                                 {{ $user->role == 1 ? 'BK' : ($user->role == 2 ? 'Guru' : ($user->role == 3 ? 'Siswa' : 'Osis')) }}
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-warning btn-detail open_modal" value="{{ $user->id }}">
+                                <button class="btn btn-sm btn-warning open_modal" value="{{ $user->id }}">
                                     <i class="fas fa-pen"></i> Edit
                                 </button>
                                 <button type="button" onclick="deleteUser({{ $user->id }})" class="btn btn-sm btn-danger">
@@ -67,6 +68,7 @@
     @include('bk.page.user.edit_user')
     @include('bk.page.user.create_user')
 @endsection
+
 
 @push('scripts')
     <script>

@@ -170,31 +170,4 @@ class PoinController extends Controller
         return redirect('/master-siswa')->with('success', 'Poin berhasil ditambahkan');
     }
 
-    public function kurang_view(Student $siswa)
-    {
-        return view('bk.page.poin.kurang-poin', [
-            'siswa' => $siswa,
-            'rules' => Peraturan::all()
-        ]);
-    }
-
-    public function kurang_poin(Request $request, $id)
-    {
-        $this->validate($request, [
-            'poin' => 'required'
-        ], $this->message);
-
-        $siswa = Student::findOrFail($id);
-
-        if ($siswa->poin < $request->poin) {
-            return redirect()->back()->with('toast_error', 'Poin tidak valid!');
-        } else {
-
-            $siswa->update([
-                'poin' => $siswa->poin - $request->poin
-            ]);
-
-            return redirect('master-siswa')->with('success', 'Poin berhasil dikurangi');
-        }
-    }
 }

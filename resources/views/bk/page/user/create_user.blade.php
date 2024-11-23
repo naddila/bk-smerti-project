@@ -1,14 +1,14 @@
- <!-- Modal Tambah User -->
- <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+<!-- Modal Tambah User -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content">
             <form action="{{ route('master-user.store') }}" method="POST" id="addUserForm">
                 @csrf
-                <div class="modal-header fs-4 fw-bold text-light py-2" style="background-color: #395886">
+                <div class="modal-header" style="border-bottom: 1px solid #ccc; background-color: white; padding: 10px;">
                     <h5 class="modal-title" id="addUserModalLabel">Tambah Pengguna</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="padding: 20px;">
                     <div class="mb-3">
                         <label for="nisn" class="form-label">NISN</label>
                         <input type="text" class="form-control" name="nisn" id="nisn" required>
@@ -36,7 +36,7 @@
                         </select>
                     </div>
                     <div>
-                        <label for="info">Status Info</label>
+                        <label for="info" class="form-label">Status Info</label>
                         <div>
                             <input type="radio" id="info" name="info" value="1" checked>
                             <label for="info">Sudah</label>
@@ -47,9 +47,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" style="border-top: 1px solid #ccc; padding: 10px;">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn" style="background-color: #395886; color:white;">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>

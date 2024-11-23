@@ -125,38 +125,6 @@ class OsisController extends Controller
         return redirect('/osis/daftar-siswa')->with('success', 'Poin berhasil ditambahkan');
     }
 
-    // tampilan kurang poin
-    public function osis_kurang_view(Student $siswa)
-    {
-        return view('osis.poin.kurang', [
-            'siswa' => $siswa,
-            'rules' => Peraturan::all()
-        ]);
-    }
-
-    // logika kurang poin
-    public function osis_kurang_poin(Request $request, $id)
-    {
-        // $this->validate($request, [
-        //     'poin' => 'required'
-        // ], $this->message);
-
-        $validatedData = $request->validate([
-            'poin' => 'required'
-        ]);
-        $siswa = Student::findOrFail($id);
-
-        if ($siswa->poin < $request->poin) {
-            return redirect()->back()->with('toast_error', 'Poin tidak valid!');
-        } else {
-
-            $siswa->update([
-                'poin' => $siswa->poin - $request->poin
-            ]);
-
-            return redirect('/osis/daftar-siswa')->with('success', 'Poin berhasil dikurangi');
-        }
-    }
 
     // master histori (menampilkan halaman histori siswa)
     public function osis_histori_index()

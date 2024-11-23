@@ -68,10 +68,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/master-siswa', [BKController::class, 'daftar_siswa']);
         // Tambah Poin
         Route::get('/pelanggaran/tambah/{siswa:nisn}', [PoinController::class, 'tambah_view']);
-        // Kurang poin
-        Route::get('/pelanggaran/kurang/{siswa:nisn}', [PoinController::class, 'kurang_view']);
         Route::put('/pelanggaran/{id}', [PoinController::class, 'tambah_poin']);
-        Route::put('/pelanggaran/kurang/{id}', [PoinController::class, 'kurang_poin']);
         // Histori
         Route::get('/master-histori', [BKController::class, 'histori_index']);
         Route::get('/master-histori/{id}', [BKController::class, 'histori_admin']);
@@ -99,9 +96,6 @@ Route::group(['middleware' => ['auth']], function () {
         // Tambah Poin
         Route::get('/osis/pelanggaran/tambah/{siswa:nisn}', [OsisController::class, 'osis_tambah_view']);
         Route::put('/osis/pelanggaran/{id}', [OsisController::class, 'osis_tambah_poin']);
-        // Kurang poin
-        Route::get('/osis/pelanggaran/kurang/{siswa:nisn}', [OsisController::class, 'osis_kurang_view']);
-        Route::put('/osis/pelanggaran/kurang/{id}', [OsisController::class, 'osis_kurang_poin']);
         // Master Histori
         Route::get('/osis/master-history', [OsisController::class, 'osis_histori_index']);
         Route::get('/osis/master-history/{id}', [OsisController::class, 'osis_histori_admin']);

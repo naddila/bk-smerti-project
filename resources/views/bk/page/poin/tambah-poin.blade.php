@@ -7,12 +7,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<div class="card">
-    <div class="card-header bg-gradient text-white" style="background-color: #395886">
-        <h3 class="mt-2">
-            Pelanggaran yang dilakukan oleh <b>{{ $siswa->nama }}</b>
-        </h3>
-    </div>
+<div class="card" style="background-color: white;">
     <div class="card-body">
         <form action="/pelanggaran/{{ $siswa->id }}" method="post" id="form">
 
@@ -49,9 +44,9 @@
                 </tbody>
             </table>
             <div class="text-end" style="font-size: 13px;">
-                <a href="/master-siswa" class="btn btn-md btn-secondary btn-rounded me-1">Back</a>
+                <a href="/master-siswa" class="btn btn-md btn-secondary btn-rounded me-1">Kembali</a>
                 <button class="btn btn-md btn-primary me-1 my-2 show_confirm" type="submit">
-                    Tambah Poin
+                    Tambah
                 </button>
             </div>
         </form>

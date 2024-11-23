@@ -1,11 +1,9 @@
 @extends('layouts.main')
 @section('title', 'Data Peraturan')
 @section('content')
-    <div class="card shadow px-0">
-        <div class="card-header d-flex justify-content-between align-items-center p-3" style="background-color: #395886">
-            <h1 class="fw-bolder text-white" style="animation-delay: 0.5s;">Master Peraturan</h1>
-            <a href="{{ route('master-peraturan.create') }}" class="btn btn-md btn-light float-end"
-                style="animation-delay: 0.5s; color:#395886">
+    <div class="card" style="background-color: white;">
+        <div class="card-header" style="border-bottom: 1px solid #ccc; padding: 10px;">
+            <a href="{{ route('master-peraturan.create') }}" class="btn btn-md btn-primary">
                 <i class="fas fa-chalkboard-teach me-1"></i> Tambah Peraturan
             </a>
         </div>
@@ -14,7 +12,7 @@
             @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
-            <table id="table_data_peraturan" class="table table-bordered display" cellspacing="0" width="100%">
+            <table id="table_data_peraturan" class="table table-bordered w-100" style="border-collapse: collapse;">
                 <thead>
                     <tr>
                         <th>ID</th>

@@ -2,14 +2,9 @@
 @section('title', 'Data Penanganan')
 @section('content')
     <div class="row justify-content-center">
-        <div class="card shadow px-0">
-            <div class="card-header" style="background-color: #395886">
-                <h3 class="fw-bolder mt-2 text-white">
-                    Penanganan
-                </h3>
-            </div>
+        <div class="card" style="background-color: white;">
             <div class="card-body">
-                <table id="table_data_user" class="table table-bordered display nowrap" cellspacing="0" width="100%">
+                <table id="table_data_user" class="table table-bordered w-100" style="border-collapse: collapse;">
                     <thead class="thead-inverse">
                         <tr>
                             <th>No.</th>
@@ -34,8 +29,7 @@
                                         @if ($tindak->status == 0)
                                             <form action="/penanganan/{{ $tindak->id }}" method="post">
                                                 @csrf
-                                                <button type="submit" class="btn btn-sm"
-                                                    style="background-color: #628ecb; color:white">Konfirmasi</button>
+                                                <button type="submit" class="btn btn-sm btn-primary">Konfirmasi</button>
                                             </form>
                                         @else
                                             <button class="btn btn-secondary btn-sm" disabled>Selesai -
@@ -43,20 +37,18 @@
                                         @endif
                                     @else
                                         @if ($tindak->status == 0)
-                                            <a href="#modalCenter{{ $tindak->id }}" role="button" class="btn btn-sm"
-                                                data-bs-toggle="modal" style="background-color: #395886; color:white">Kirim
+                                            <a href="#modalCenter{{ $tindak->id }}" role="button" class="btn btn-sm btn-primary"
+                                                data-bs-toggle="modal">Kirim
                                                 Jadwal</a>
                                         @endif
                                         @if ($tindak->status == 1)
                                             <form action="/penanganan/{{ $tindak->id }}" method="post">
                                                 @csrf
-                                                <button class="btn btn-sm"
-                                                    style="background-color: #395886; color:white">Konfirmasi</button>
+                                                <button class="btn btn-sm btn-primary">Konfirmasi</button>
                                             </form>
                                         @endif
                                         @if ($tindak->status == 2)
-                                            <button class="btn btn-sm" style="background-color: #395886; color:white"
-                                                disabled>Selesai -
+                                            <button class="btn btn-sm btn-primary" disabled>Selesai -
                                                 {{ $tindak->created_at->format('d/m/Y') }}</button>
                                         @endif
                                     @endif
@@ -65,11 +57,10 @@
                                     @if ($tindak->berkas)
                                         <a href="{{ Storage::url('surat/' . $tindak->berkas) }}" class="btn"
                                             target="_blank" rel="noopener noreferrer">
-                                            <button class="btn btn-sm fas fa-download"
-                                                style="background-color: #395886; color:white"></button>
+                                            <button class="btn btn-sm fas fa-download btn-primary"></button>
                                         </a>
                                     @else
-                                        Tidak ada berkas
+                                        -
                                     @endif
 
                                 </td>
@@ -77,8 +68,7 @@
                             <div id="modalCenter{{ $tindak->id }}" class="modal fade" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog modal-md modal-dialog-centered">
                                     <div class="modal-content">
-                                        <div class="modal-header py-2 text-white"
-                                            style="background-color: #395886; color:white">
+                                        <div class="modal-header py-2">
                                             <h5 class="modal-title ps-2">Jadwal Bimbingan</h5>
                                         </div>
                                         <div class="modal-body">

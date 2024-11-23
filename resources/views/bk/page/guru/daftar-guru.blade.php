@@ -10,22 +10,21 @@
     </style>
 @endpush
 @section('content')
-    <div class="card shadow px-0">
-        <div class="card-header" style="background-color: #395886">
-            <h3 class="fw-bolder mt-2 d-inline-flex text-white">Daftar Wali Kelas</h3>
-            <button type="button" class="btn btn-md float-end" style=" color: #395886; background-color:white;"
+    <div class="card" style="background-color: white;">
+        <div class="card-header" style="border-bottom: 1px solid #ccc; padding: 10px;">
+            <button type="button" class="btn btn-primary"
                 data-bs-toggle="modal" data-bs-target="#myModal">
-                <i class=" fas fa-chalkboard-teacher" style="color: #395886;"></i> Tambah Guru
+                <i class="fas fa-chalkboard-teacher me-1 "></i> Tambah Guru
             </button>
         </div>
 
-        <div class="card-body">
+        <div class="card-body" style="padding: 20px;">
             @if (session()->has('errors'))
                 <ul>
                     <li>{{ session('errors') }}</li>
                 </ul>
             @endif
-            <table id="table_data_user" class="table table-bordered display" cellspacing="0" width="100%">
+            <table id="table_data_user" class="table table-bordered w-100" style="border-collapse: collapse;">
                 <thead class="thead-inverse">
                     <th>No</th>
                     <th>Nama</th>
@@ -55,7 +54,7 @@
     <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header fs-4 fw-bold text-light py-2" style="background-color: #395886">
+                <div class="modal-header fs-4 fw-bold py-2">
                     <h4 class="modal-title" id="myModalLabel">Tambah Wali Kelas</h4>
                 </div>
                 <div class="modal-body">
@@ -101,6 +100,8 @@
         </div>
     </div>
 @endsection
+
+
 @push('scripts')
     <script>
         $(document).ready(function() {
