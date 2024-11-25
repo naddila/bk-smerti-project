@@ -2,7 +2,7 @@
 <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content">
-            <form action="{{ route('master-user.store') }}" method="POST" id="addUserForm">
+            <form action="/master-user/store" method="POST" id="addUserForm">
                 @csrf
                 <div class="modal-header" style="border-bottom: 1px solid #ccc; background-color: white; padding: 10px;">
                     <h5 class="modal-title" id="addUserModalLabel">Tambah Pengguna</h5>
@@ -26,9 +26,9 @@
                         <input type="password" class="form-control" name="password" id="password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="role" class="form-label">Role</label>
+                        <label for="role" class="form-label">Akses</label>
                         <select class="form-control" name="role" id="role" required>
-                            <option value="" disabled selected>Pilih Role</option>
+                            <option value="" disabled selected>Pilih Akses</option>
                             <option value="1">BK</option>
                             <option value="2">Guru</option>
                             <option value="3">Siswa</option>
@@ -36,7 +36,7 @@
                         </select>
                     </div>
                     <div>
-                        <label for="info" class="form-label">Status Info</label>
+                        <label for="info" class="form-label">Sudah Registrasi</label>
                         <div>
                             <input type="radio" id="info" name="info" value="1" checked>
                             <label for="info">Sudah</label>

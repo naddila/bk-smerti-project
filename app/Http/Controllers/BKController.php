@@ -55,8 +55,8 @@ class BKController extends Controller
             'confirmed' => ':attribute tidak cocok!',
         ];
         $request->validate([
-            'password_lama' => 'required|min:8|max:255',
-            'password_baru' => 'required|confirmed|min:8|max:255',
+            'old_password' => 'required|min:8|max:255',
+            'new_password' => 'required|confirmed|min:8|max:255',
         ], $message);
 
 

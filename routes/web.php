@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['role:1']], function () {
         // Master user
         Route::get('/master-user', [UserAdminController::class, 'daftar_user'])->name('master.user');
-        Route::post('/master-user/store', [UserAdminController::class, 'store'])->name('master-user.store');
+        Route::post('/master-user/store', [UserAdminController::class, 'store']);
         Route::get('/master-user/{id}/edit', [UserAdminController::class, 'edit']);
         Route::put('/master-user/{id}', [UserAdminController::class, 'update']);
         Route::post('/master-user/{id}', [UserAdminController::class, 'destroy']);

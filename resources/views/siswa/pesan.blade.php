@@ -44,7 +44,7 @@
                                                 <a class="btn btn-sm text-white" style="background-color: #395886" href="/storage/surat/{{ $msg->berkas }}"
                                                     target="_blank">Unduh Surat</a>
                                             @else
-                                            Tidak Ada Berkas
+                                            Sanksi Selesai
                                             @endif
                                         @endif
                                     </td>

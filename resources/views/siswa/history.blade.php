@@ -37,7 +37,7 @@
                         @endforeach
                     </div>
                 @else
-                    <h5 class="text-secondary text-center py-1 mt-4">Histori tidak ada</h5>
+                    <h5 class="text-secondary text-center py-1 mt-4">Riwayat Pelanggaran tidak ada</h5>
                 @endif
 
             </div>

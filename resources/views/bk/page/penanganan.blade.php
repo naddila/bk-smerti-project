@@ -69,7 +69,7 @@
                                 <div class="modal-dialog modal-md modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header py-2">
-                                            <h5 class="modal-title ps-2">Jadwal Bimbingan</h5>
+                                            <h5 class="modal-title ps-2">Jadwal Konsultasi</h5>
                                         </div>
                                         <div class="modal-body">
                                             <form action="/penanganan/{{ $tindak->id }}" method="post">
@@ -111,7 +111,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 @endsection

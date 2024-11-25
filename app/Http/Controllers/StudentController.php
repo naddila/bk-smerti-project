@@ -30,40 +30,67 @@ class StudentController extends Controller
     }
 
     // logika ubah data siswa
+    // public function update(Request $request, $id)
+    // {
+    //     $siswa = Student::findOrFail($id);
+
+    //     $validator = Validator::make($request->all(), [
+    //         'no_telp' => 'unique:students,no_telp,' . $id
+    //     ]);
+    //     if ($validator->fails()) {
+    //         return response()->json([
+    //             'status' => 400,
+    //             'errors' => $validator->getMessageBag()
+    //         ]);
+    //     } else {
+
+    //         $siswa->nama = $request->post('name');
+    //         $siswa->nisn = $request->post('nisn');
+    //         $siswa->alamat = $request->post('alamat');
+    //         $siswa->no_telp = $request->post('no_telp');
+    //         $siswa->n_ayah = $request->post('n_ayah');
+    //         $siswa->n_ibu = $request->post('n_ibu');
+    //         $siswa->alamat_ortu = $request->post('alamat_ortu');
+    //         $siswa->no_telp_rumah = $request->post('no_telp_rumah');
+    //         $siswa->save();
+
+    //         return response()->json([
+    //             'success' => true,
+    //             'message' => 'Data Berhasil diubah.'
+    //         ]);
+    //     }
+    // }
     public function update(Request $request, $id)
-    {
-        $siswa = Student::findOrFail($id);
+{
+    $siswa = Student::findOrFail($id);
 
-        $validator = Validator::make($request->all(), [
-            'no_telp' => 'unique:students,no_telp,' . $id
-        ]);
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 400,
-                'errors' => $validator->getMessageBag()
-            ]);
-        } else {
+    // Validasi data
+    $request->validate([
+        'name' => 'required',
+        'alamat' => 'required',
+        'no_telp' => 'required|unique:students,no_telp,' . $id,
+        'n_ayah' =>'required',
+        'n_ibu' =>'required',
+        'alamat_ortu' =>'required',
+        'no_telp_rumah' =>'required'
+    ]);
 
-            $siswa->nama = $request->post('name');
-            $siswa->nisn = $request->post('nisn');
-            $siswa->ttl = $request->post('ttl');
-            $siswa->alamat = $request->post('alamat');
-            $siswa->no_telp = $request->post('no_telp');
-            $siswa->alamat = $request->post('alamat');
-            $siswa->n_ayah = $request->post('n_ayah');
-            $siswa->n_ibu = $request->post('n_ibu');
-            $siswa->no_telp_rumah = $request->post('no_telp_rumah');
-            $siswa->alamat_ortu = $request->post('alamat_ortu');
-            $siswa->save();
+    // Update data siswa
+    $siswa->update([
+        'nama' => $request->name,
+        'alamat' => $request->alamat,
+        'no_telp' => $request->no_telp,
+        'n_ayah' => $request->n_ayah,
+        'n_ibu' => $request->n_ibu,
+        'alamat_ortu' => $request->alamat_ortu,
+        'no_telp_rumah'=> $request->no_telp_rumah,
+    ]);
 
-            return response()->json([
-                'success' => true,
-                'message' => 'Data Berhasil diubah.'
-            ]);
-        }
-    }
+    return redirect()->back()->with('success', 'Data siswa berhasil diupdate!');
+}
 
-    // simpan data siswa
+
+    // simpan data siswa saat registrasi
     public function store(Request $request)
     {
         $message = [
@@ -132,8 +159,8 @@ class StudentController extends Controller
             'confirmed' => ':attribute tidak cocok!',
         ];
         $request->validate([
-            'password_lama' => 'required|min:8|max:255',
-            'password_baru' => 'required|confirmed|min:8|max:255',
+            'old_password' => 'required|min:8|max:255',
+            'new_password' => 'required|confirmed|min:8|max:255',
         ], $message);
 
 

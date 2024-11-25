@@ -99,7 +99,7 @@ class PenangananController extends Controller
         $penanganan->update([
             'status' => 1
         ]);
-        return redirect()->back()->with('success', 'Terkonfirmasi');
+        return redirect()->back()->with('success', 'Selesai');
     }
 
     // menampilkan data penanganan untuk guru

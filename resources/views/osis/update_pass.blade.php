@@ -15,19 +15,19 @@
                     @method('put')
                     <div class="mb-3">
                         <label for="oldPasswordInput" class="form-label">Password Lama</label>
-                        <input name="password_lama" type="password"
-                            class="form-control @error('password_lama') is-invalid @enderror" id="oldPasswordInput"
+                        <input name="old_password" type="password"
+                            class="form-control @error('old_password') is-invalid @enderror" id="oldPasswordInput"
                             placeholder="Password Lama">
-                        @error('password_lama')
+                        @error('old_password')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label for="newPasswordInput" class="form-label">Password Baru</label>
-                        <input name="password_baru" type="password"
-                            class="form-control @error('password_baru') is-invalid @enderror" id="newPasswordInput"
+                        <input name="new_password" type="password"
+                            class="form-control @error('new_password') is-invalid @enderror" id="newPasswordInput"
                             placeholder="Password Baru">
-                        @error('password_baru')
+                        @error('new_password')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

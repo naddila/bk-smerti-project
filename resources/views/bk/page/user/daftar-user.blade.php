@@ -1,7 +1,5 @@
 @extends('layouts.main')
-
 @section('title', 'Daftar Pengguna')
-
 @push('css')
     <style>
         #change_pass_form label.error {
@@ -68,7 +66,6 @@
     @include('bk.page.user.edit_user')
     @include('bk.page.user.create_user')
 @endsection
-
 
 @push('scripts')
     <script>

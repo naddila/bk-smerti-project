@@ -158,9 +158,6 @@ select:-webkit-autofill {
     padding: 8px 50px;
     border-radius: 0;
     border: 2px solid #dddddd;
-    box-shadow: inset 0 5 0 5 silver;
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
     transition: all ease 0.4s;
 }
 
@@ -170,7 +167,6 @@ select:-webkit-autofill {
 .btn-success:active {
     background-color: transparent;
     border-color: #ffffff;
-    box-shadow: inset 0 0 75px 0 #e9f0fe, 0 0 15px #e9eefe;
     color: #353535;
 }
 
@@ -192,7 +188,6 @@ select:-webkit-autofill {
 
 div.alert.alert-error {
     color: red;
-    text-shadow: 0 0 5px #333, 0 0 10px #333;
     width: auto;
     position: absolute;
     right: 0;
@@ -201,7 +196,6 @@ div.alert.alert-error {
 
 text-small.alert.alert-error {
     color: red;
-    text-shadow: 0 0 5px #333, 0 0 10px #333;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -307,7 +301,6 @@ text-small.alert.alert-error {
 
     text-small.alert.alert-error {
         color: red;
-        text-shadow: 0 0 5px #111, 0 0 10px #111;
         position: absolute;
         left: 0;
         bottom: -8px;
@@ -315,7 +308,6 @@ text-small.alert.alert-error {
 
     div.alert.alert-error {
         color: red;
-        text-shadow: 0 0 5px #111, 0 0 10px #111;
         width: auto;
         position: absolute;
         right: 10px;

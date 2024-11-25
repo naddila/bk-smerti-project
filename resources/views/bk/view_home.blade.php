@@ -108,6 +108,7 @@
     </div>
 </div>
 
+<!-- Card Pelanggaran Terbaru -->
 <div class="col-lg-12">
     <div class="card shadow-sm bg-white">
         <div class="card-body">
