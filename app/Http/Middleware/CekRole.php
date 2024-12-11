@@ -9,7 +9,7 @@ class CekRole
 {
     /**
      * Handle an incoming request.
-     * [1.admin, 2.guru, 3.siswa]
+     * [1.bk, 2.pembina osis, 3.wali kelas, 4.siswa]
      */
     public function handle(Request $request, Closure $next, ...$role)
     {
